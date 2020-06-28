@@ -1,8 +1,24 @@
-let app = require('express')();
+const { exec } = require('child_process');
+const app = require('express')();
+const path = require('path');
 
 app.get('/', (req, res) => {
-    res.send('still gaming');
+    res.sendFile(path.join(__dirname + '/pages/index.html'));
+    
 });
+
+app.post('/on', (req, res) => {
+    exec('sudo python gpio/on1.py');
+    res.sendStatus(200);
+});
+
+app.post('/off', (req, res) => {
+    exec('sudo python gpio/off1.py');
+    res.sendStatus(200);
+});
+
+
+
 
 app.post('/brrr', (req, res) => {
     //process electrocution)

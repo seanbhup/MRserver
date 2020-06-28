@@ -25,3 +25,11 @@ short(3)
 
 
 
+#connect (position1, position2) on breadboard
+#led (anode f1, cathode f4)
+#22resistor (i1, -9)
+#gpio 7 -->  j1
+#gpio ground --> -1 
+
+
+
